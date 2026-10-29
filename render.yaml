@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: industrial-ai-platform
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEVICE
+        value: cpu
+      - key: PERSON_CONFIDENCE
+        value: "0.35"
+      - key: PPE_CONFIDENCE
+        value: "0.40"
